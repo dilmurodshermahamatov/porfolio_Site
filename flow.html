@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="jquery.js"></script>
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <script src="js/slick.min.js"></script>
+    <script src="jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="header_inner">
+            <div class="header_img">
+                <div class="header_text">
+                    <h1>Programming Practice</h1>
+                    <p class="tel">TEL:0120-000-000<span>AM9:00~PM6:00</span></p>
+                </div>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">TOP</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="flow.html">FLOW</a></li>
+                    <li><a href="examples.html">EXAMPLES</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="wrapper">
+            <main>
+                <section class="flow_content">
+                    <div class="flowpage_inner">
+                        <h2 class="sub_title">Flow</h2>
+                        <div class="flow_box">
+                            <div class="flow_box_inner">
+                                <img src="images/flow_icon.png" alt="">
+                                <div class="flow_box_text">
+                                    <h3>Step</h3>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat repellendus accusamus deleniti? Dolore, eaque? Commodi recusandae aperiam nulla quos eveniet maiores, officia quidem suscipit, molestias provident nam. Quo, cumque in?</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flow_box">
+                        <div class="flow_box_inner">
+                            <img src="images/flow_icon.png" alt="">
+                            <div class="flow_box_text">
+                                <h3>Step</h3>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat repellendus accusamus deleniti? Dolore, eaque? Commodi recusandae aperiam nulla quos eveniet maiores, officia quidem suscipit, molestias provident nam. Quo, cumque in?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flow_box">
+                        <div class="flow_box_inner">
+                            <img src="images/flow_icon.png" alt="">
+                            <div class="flow_box_text">
+                                <h3>Step</h3>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat repellendus accusamus deleniti? Dolore, eaque? Commodi recusandae aperiam nulla quos eveniet maiores, officia quidem suscipit, molestias provident nam. Quo, cumque in?</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <aside>
+                <section class="side_menu">
+                    <div class="side_menu_inner">
+                        <h3 class="side_title">Menu</h3>
+                        <ul>
+                            <li><a href="">Menu1</a></li>
+                            <li><a href="">Menu2</a></li>
+                            <li><a href="">Menu3</a></li>
+                            <li><a href="">Menu4</a></li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="side_info">
+                    <div class="side_class_inner">
+                        <h3 class="side_title">Information</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est laudantium officiis repudiandae
+                            sit tempore neque dicta libero quaerat minus cum? Ea maiores aspernatur aperiam ipsum atque
+                            assumenda vero, veritatis minima?</p>
+                    </div>
+                </section>
+                <section class="side_links">
+                    <div class="side_links_inner">
+                        <h3 class="side_title">Links</h3>
+                        <ul>
+                            <li><a href="">Link1</a></li>
+                            <li><a href="">Link2</a></li>
+                            <li><a href="">Link3</a></li>
+                        </ul>
+                    </div>
+                </section>
+            </aside>
+        </div>
+    </div>
+
+    <div class="campaign">
+        <a href="">
+            <img src="images/campaign.png" alt="">
+        </a>
+    </div>
+   
+
+    <footer>
+        <div class="footer_inner">
+            <div class="footer_bg">
+                <div class="footer_menu">
+                    <ul>
+                        <li><a href="index.html">TOP</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="flow.html">FLOW</a></li>
+                        <li><a href="examples.html">Examples</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="">Menu1</a></li>
+                        <li><a href="">Menu2</a></li>
+                        <li><a href="">Menu3</a></li>
+                        <li><a href="">Menu4</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copy_box">
+                <p class="copy">&copy;2020 Programming Practice</p>
+            </div>
+        </div>
+    </footer>
+    <p class="pagetop"><a href="#wrap">&uarr;</a></p>
+    <div class="footer_inner">
+
+    <script>
+        $(function () {
+            $(window).on('load scroll', function () {
+                $('.animation').each(function () {
+                    var target = $(this).offset().top;
+                    var scroll = $(window).scrollTop();
+                    var height = $(window).height();
+                    if (scroll > target - height) {
+                        $(this).addClass('active');
+                    }
+                });
+            });
+        });
+        $(function () {
+            $('a[href^="#"]').click(function () {
+                var speed = 3000;
+                var href = $(this).attr("href");
+                var target = $(href == "#" || href == "" ? 'html' : href);
+                var position = target.offset().top;
+                $("html,body").animate({ scrollTop: position }, speed, "swing");
+                return false;
+            });
+        });
+    </script>
+    <script>
+        $('.slider').slick();
+    </script>
+    <script>
+        $('.slider').slick({
+            infinite: true,
+            slidesToShow: 3,
+        });
+    </script>
+    <script>
+        $('.slider').slick({
+            infinite: true,
+            slidesToShow: 2,
+            dots: true,
+            autoplay: true,
+            speed: 300,
+        });
+    </script>
+       <script>
+        $(document).ready(function(){
+            var pagetop = $('.pagetop');
+            $(window).scroll(function(){
+                if ($(this).scrollTop() > 300){
+                    pagetop.fadeIn();
+                }
+                else{
+                    pagetop.fadeOut();
+                    }
+                });
+                pagetop.click(function(){
+                        $('body,html').animate({scrollTop: 0},500);
+                        return false;
+            });
+        });
+    </script>
+</body>
+
+</html>
